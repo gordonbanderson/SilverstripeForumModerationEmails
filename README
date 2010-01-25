@@ -1,0 +1,21 @@
+= Email Notification of Forum Postings
+The Forums module, available at LINK does not unfortunately email moderators or any other email address when a posting occurs, making it tricky to keep a handle on spam.
+
+In order to get round this problem, this module decorates the existing Forums module, emailing a globally configurable email address if it is set.  If it is not set then no email is sent.
+
+= Configuration
+In mysite/_config.php
+
+	global $forum_moderator_email_address
+	$forum_moderator_email_address = 'moderator_alias@yourcompany.com'
+
+With the above configured, and on the assumption that email from your server is working correctly, emails should be sent to the globally configured email address each time a posting is made.
+
+
+= TODO
+I am still quite new to Silverstripe, this is my first module.  The above is not very fine grained but works.
+
+Future improvements?
+
+- Email all the moderators for the current forum
+- Make the email address configurable in the CMS
